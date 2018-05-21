@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import Main from 'App/Reservation/pages/Main';
+import routes from './routes';
 
 class Reservation extends Component {
 
     render() {
         return (
             <div>
-                <Main />
+                <Switch>
+                    {routes.map(({ ...routeProps }) => (
+                      <Route { ...routeProps } key={routeProps.path || ''}/>
+                    ))}
+                </Switch>
             </div>
         )
     }
