@@ -1,15 +1,22 @@
-import React from 'react';
-import './index.css';
+import React from "react";
+
+import classnames from "classnames/bind";
+
+import css from "./index.scss";
+
+const cx = classnames.bind(css);
+const moduleName = "Main";
 
 const Main = () => {
+  return (
+    <div className={cx(`${moduleName}`)}>
+      <div className={cx(`${moduleName}-Template`)}>
+        hello
+        <br />
+        asdf
+      </div>
+    </div>
+  );
+};
 
-    return (
-            <div className="main-template">
-                hello
-                <br/>
-                asdf
-            </div>
-    )
-}
-
-export default Main
+export default Main;
