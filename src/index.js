@@ -1,14 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import { AppContainer } from 'react-hot-loader';
+import createHistory from 'history/createBrowserHistory';
+import createNewStore from 'redux/createNewStore';
+
 import "./index.css";
 import App from "App";
 import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const history = createHistory();
+const store = createNewStore(history);
+//https://github.com/ReactTraining/react-router/issues/4477 zsid "react-router-redux": "next" 교체로 에러 해결
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Component/>
+        </ConnectedRouter>,
+      </Provider>
+    </AppContainer>,
+    document.getElementById("root")
+  );
+};
+render(App);
+
+if (module.hot) {
+  module.hot.accept('src/App', () => {
+    render(App);
+  })
+}
 registerServiceWorker();
