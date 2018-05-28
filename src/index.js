@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import createHistory from 'history/createBrowserHistory';
-import createNewStore from 'redux/createNewStore';
+import createNewStore from 'src/redux/createNewStore';
 
 import "./index.css";
-import App from "App";
+import App from "src/App";
 import registerServiceWorker from "./registerServiceWorker";
 
 const history = createHistory();
@@ -20,12 +20,13 @@ const render = Component => {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <Component/>
-        </ConnectedRouter>,
+        </ConnectedRouter>
       </Provider>
     </AppContainer>,
     document.getElementById("root")
   );
 };
+
 render(App);
 
 if (module.hot) {

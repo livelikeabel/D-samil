@@ -1,4 +1,4 @@
-import Reservation from 'App/Reservation';
+import Reservation from 'src/App/Reservation';
 
 const routes = [
     {
