@@ -1,13 +1,19 @@
+@import 'src/scss/mixins';
+@import 'src/scss/variables';
+
 .Main {
   &-Template {
     width: 100vw;
     height: 100vh;
-    max-width: 430px;
-    max-height: 900px;
-    background-color: #4dabf7;
+    background-color: $color-blue;
+    @include desktop {
+      max-width: 35vw;
+      max-height: 100vh;
+      margin: 0 auto;
+    }
   }
   &-Buttons {
-    background-color: #4dabf7;
+    background-color: $color-blue;
     width: 100vw;
     height: 25vh;
     bottom: 0px;
@@ -15,12 +21,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    @include desktop {
+      width: 35vw;
+    }
 
     &-Floor {
       display: inline-block;
       width: 37vw;
       height: 12vh;
-      background-color: #51cf66;
+      background-color: $color-green;
       margin-left: 3vw;
       margin-right: 3vw;
       margin-top: 2vh;
@@ -28,10 +37,17 @@
       font-size: 6vw;
       text-align: center;
       line-height: 12vh;
+
+      @include desktop {
+        width: 12vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+        font-size: 2vw;
+      }
     }
   
     &-Userlist {
-      background-color: #a5d8ff;
+      background-color: $color-skyblue;
       color: white;
       font-size: 6vw;
       width: 80vw;
@@ -40,6 +56,12 @@
       display: block;
       text-align: center;
       line-height: 7vh;
+
+      @include desktop {
+        width: 25vw;
+        height: 7vh;
+        font-size: 2vw;
+      }
     }
   }
 }
