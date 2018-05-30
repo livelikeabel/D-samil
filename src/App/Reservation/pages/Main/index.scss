@@ -3,7 +3,48 @@
     width: 100vw;
     height: 100vh;
     max-width: 430px;
-    height: 900px;
-    background-color: aqua;
+    max-height: 900px;
+    background-color: #4dabf7;
   }
+  &-Buttons {
+    background-color: #4dabf7;
+    width: 100vw;
+    height: 25vh;
+    bottom: 0px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &-Floor {
+      display: inline-block;
+      width: 37vw;
+      height: 12vh;
+      background-color: #51cf66;
+      margin-left: 3vw;
+      margin-right: 3vw;
+      margin-top: 2vh;
+      color: white;
+      font-size: 6vw;
+      text-align: center;
+      line-height: 12vh;
+    }
+  
+    &-Userlist {
+      background-color: #a5d8ff;
+      color: white;
+      font-size: 6vw;
+      width: 80vw;
+      height: 7vh;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      line-height: 7vh;
+    }
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none; 
 }
